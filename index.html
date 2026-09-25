@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeBoard | Social Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="logo"><span>V</span> VibeBoard</div>
+            <nav>
+                <a href="#" class="active" data-page="dashboard">📊 Dashboard</a>
+                <a href="#" data-page="analytics">📈 Analytics</a>
+                <a href="#" data-page="content">📝 Content</a>
+                <a href="#" data-page="audience">👥 Audience</a>
+                <a href="#" data-page="settings">⚙️ Settings</a>
+            </nav>
+            <div class="sidebar-bottom"><p>© 2026 VibeBoard</p></div>
+        </aside>
+
+        <main class="main">
+
+            <header class="header">
+                <div>
+                    <p class="greeting">Good evening 👋</p>
+                    <h1>Social Media Dashboard</h1>
+                </div>
+                <div class="header-actions">
+                    <select id="dateFilter" aria-label="Select date range">
+                        <option value="7">Last 7 days</option>
+                        <option value="30">Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                    </select>
+                    <button id="themeButton" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top"><span>Followers</span><span class="icon">👥</span></div>
+                    <h2 id="followers">0</h2>
+                    <p id="followersChange" class="positive">↑ 0% <span>vs last period</span></p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Likes</span><span class="icon">❤️</span></div>
+                    <h2 id="likes">0</h2>
+                    <p id="likesChange" class="positive">↑ 0% <span>vs last period</span></p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Comments</span><span class="icon">💬</span></div>
+                    <h2 id="comments">0</h2>
+                    <p id="commentsChange" class="positive">↑ 0% <span>vs last period</span></p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top"><span>Profile Views</span><span class="icon">👀</span></div>
+                    <h2 id="views">0</h2>
+                    <p id="viewsChange" class="negative">↓ 0% <span>vs last period</span></p>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="chart-card">
+                    <div class="card-header">
+                        <div>
+                            <p class="small-title">Audience Growth</p>
+                            <h2 id="chartTotal">0 <span class="growth" id="chartGrowth">+0%</span></h2>
+                        </div>
+                        <span class="chart-label">Followers</span>
+                    </div>
+                    <div class="chart">
+                        <div class="chart-y">
+                            <span>25K</span><span>20K</span><span>15K</span><span>10K</span><span>5K</span>
+                        </div>
+                        <div class="chart-area">
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="bars" id="chartBars"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="engagement-card">
+                    <div class="card-header">
+                        <div><p class="small-title">Engagement</p><h2 id="engagementRate">0%</h2></div>
+                        <span class="icon">🔥</span>
+                    </div>
+                    <div class="engagement-content">
+                        <div class="circle"><strong id="engagementGoal">0%</strong><span>Goal</span></div>
+                        <div class="engagement-info">
+                            <div><span>Likes</span><strong>62%</strong></div>
+                            <div><span>Comments</span><strong>24%</strong></div>
+                            <div><span>Shares</span><strong>14%</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bottom-grid">
+                <div class="posts-card">
+                    <div class="card-header">
+                        <div><p class="small-title">Content Performance</p><h2>Top Posts</h2></div>
+                        <button class="view-btn">View all</button>
+                    </div>
+                    <div id="postsContainer"></div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="card-header">
+                        <div><p class="small-title">Audience</p><h2>Demographics</h2></div>
+                    </div>
+                    <div class="demographic">
+                        <div class="demo-row">
+                            <div><span>18–24</span><strong>42%</strong></div>
+                            <div class="progress"><div style="width:42%"></div></div>
+                        </div>
+                        <div class="demo-row">
+                            <div><span>25–34</span><strong>35%</strong></div>
+                            <div class="progress"><div style="width:35%"></div></div>
+                        </div>
+                        <div class="demo-row">
+                            <div><span>35–44</span><strong>15%</strong></div>
+                            <div class="progress"><div style="width:15%"></div></div>
+                        </div>
+                        <div class="demo-row">
+                            <div><span>45+</span><strong>8%</strong></div>
+                            <div class="progress"><div style="width:8%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
